@@ -11,7 +11,7 @@ echo -e "${YELLOW}Starting Docker uninstallation...${NC}"
 
 # Step 1: Stop Docker service
 echo -e "${GREEN}Stopping Docker service...${NC}"
-sudo systemctl stop docker || true
+#sudo systemctl stop docker || true
 
 # Step 2: Remove Docker packages
 echo -e "${GREEN}Removing Docker packages...${NC}"
@@ -24,7 +24,8 @@ sudo apt-get purge -y \
   docker-compose \
   docker.io \
   docker-engine \
-  docker
+  docker \
+  docker-cli
 
 # Step 3: Remove Docker directories and volumes
 echo -e "${GREEN}Removing Docker files and volumes...${NC}"
