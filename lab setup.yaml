@@ -1,0 +1,48 @@
+version: '3.9'
+
+networks:
+  lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 100.100.100.0/24
+
+volumes:
+  splunk-data:
+
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+    hostname: splunk
+    ports:
+      - "8000:8000"   # Splunk Web UI
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+    networks:
+      lab-net:
+        ipv4_address: 100.100.100.100
+    volumes:
+      - splunk-data:/opt/splunk/var
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    hostname: dvwa
+    ports:
+      - "8080:80"    # DVWA Web UI
+    networks:
+      lab-net:
+        ipv4_address: 100.100.100.101
+
+  kali:
+    image: kalilinux/kali-rolling
+    container_name: kali
+    hostname: kali
+    tty: true         # So it stays running
+    stdin_open: true  # Allow interaction if needed
+    networks:
+      lab-net:
+        ipv4_address: 100.100.100.102
