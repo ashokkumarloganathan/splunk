@@ -29,9 +29,9 @@ services:
       - splunk-data:/opt/splunk/var
 
   dvwa:
-    image: ashokkumarl/ubuntu-dvwa:latest
-    container_name: ubuntu-dvwa
-    hostname: ubuntu-dvwa
+    image: ashokkumarl/dvwa:latest
+    container_name: dvwa
+    hostname: dvwa
     ports:
       - "8080:80"    # DVWA Web UI
     networks:
