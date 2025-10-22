@@ -13,6 +13,11 @@ This project sets up containarized lab for splunk hands on training using three 
 * Minimum 8 GB of RAM
 * 128 GB Storage
 
+## Lab Architecture
+
+<img width="741" height="481" alt="image" src="https://github.com/user-attachments/assets/4a8d6de5-8bd0-40db-acd5-3dd37a8291e5" />
+
+
 - 🐳 **Splunk** (log monitoring)
 - 🔐 **DVWA** (Damn Vulnerable Web App)
 - 🐚 **Kali Linux** (penetration testing)
