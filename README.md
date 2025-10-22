@@ -68,7 +68,9 @@ The script has the following options.
 
 First Time DVWA access requires DVWA DB Setup post login. 
 
+## Video Tutorial of Lab Setup
 
+[![Splunk Lab in Docker](https://img.youtube.com/vi/Ggj1U1Ghnn4/0.jpg)](https://www.youtube.com/watch?v=Ggj1U1Ghnn4)
 
 ## Disclamier
 
