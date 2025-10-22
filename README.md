@@ -23,6 +23,7 @@ This project sets up containarized lab for splunk hands on training using three 
 ### Downloading required Files 
 
 ```bash
+apt install unzip
 wget https://github.com/ashokkumarloganathan/splunk/archive/refs/heads/main.zip
 unzip main.zip
 cd splunk-main
@@ -35,7 +36,7 @@ If you already have docker and docker compose installed then you can skip this s
 
 ```bash
 chmod +x docker_install.sh
-.\docker_install.sh
+./docker_install.sh
 
 ```
 
@@ -44,8 +45,8 @@ chmod +x docker_install.sh
 Run the lab.sh and choose the appropriate option to start or stop the lab.
 
 ```bash
-chmod +x .\lab.sh
-.\lab.sh
+chmod +x ./lab.sh
+./lab.sh
 ```
 
 The script has the following options.
