@@ -49,7 +49,6 @@ choose the available options to start / stop Lab or to access the Container CLI'
 
 | Service | URL | Credentials |
 |---------|-----|-------------|
-
 | Splunk | http://localhost:8000 or http://100.100.100.100:8000 | admin / changeme |
 | DVWA | http://localhost:8080/dvwa or http://100.100.100.101:8080/dvwa |admin / password |
 
@@ -71,7 +70,7 @@ All services run on a custom Docker network with static IPs for easy targeting.
 
 | Service | Container Name | Static IP         | Port(s)             | Notes                     |
 |---------|----------------|-------------------|----------------------|---------------------------|
-| Splunk  | `splunk`       | `100.100.100.100` | `8000` (Web UI)      | Username: `admin` / Password: `changeme` |
+| Splunk   | `splunk`       | `100.100.100.100` | `8000` (Web UI)      | Username: `admin` / Password: `changeme` |
 | DVWA    | `dvwa`         | `100.100.100.101` | `8080` → `80`        | Web app for testing vulnerabilities |
 | Kali    | `kali`         | `100.100.100.102` | (none exposed)       | CLI-only, use `docker exec` |
 
