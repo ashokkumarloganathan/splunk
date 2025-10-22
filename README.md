@@ -1,4 +1,7 @@
+
 # 🧪 Docker Lab Environment
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Platform](https://img.shields.io/badge/Platform-Linux-blue.svg)
 
 This project sets up a mini lab using Docker Compose with:
 
