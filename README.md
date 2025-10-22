@@ -1,9 +1,17 @@
 
-# 🧪 Docker Lab Environment
+# 🧪 Splunk Enterprise Lab using Docker Containers
+
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform](https://img.shields.io/badge/Platform-Linux-blue.svg)
 
-This project sets up a mini lab using Docker Compose with:
+This project sets up containarized lab for splunk hands on training using three containers Splunk, Damn Vulnerable Web Application (DVWA) and Kali Linux using Docker Compose. this can be brought up and teared down within 5 mins saving time and efforts, since these services are running in a containerized envoirnment it can run with very minimal resources with docker network and persistant storage for services.
+
+## System requirements
+
+* Ubuntu 22.0 and Above
+* CPU with 4 Cores 
+* Minimum 8 GB of RAM
+* 128 GB Storage
 
 - 🐳 **Splunk** (log monitoring)
 - 🔐 **DVWA** (Damn Vulnerable Web App)
