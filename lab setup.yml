@@ -10,6 +10,7 @@ networks:
 volumes:
   splunk-data:
   dvwa-ubuntu-data:
+  dvwa-ubuntu-db:
 
 services:
   splunk:
@@ -39,6 +40,7 @@ services:
         ipv4_address: 100.100.100.101
     volumes:
       - dvwa-ubuntu-data:/opt/var
+      - dvwa-ubuntu-db:/var/lib/mysql
 
   kali:
     image: kalilinux/kali-rolling
