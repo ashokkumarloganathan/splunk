@@ -26,8 +26,7 @@ this lab is based on docker and docker compose hence both are a prerequsites, if
 
 Clone the repo and start the docker installation:
 
-```
-bash
+```bash
 git clone https://github.com/ashokkumarloganathan/splunk.git
 cd splunk
 chmod +x 'docker install'.sh
@@ -39,8 +38,7 @@ When this step is completed start the lab
 
 ### Start The Lab
 
-```
-bash
+```bash
 chmod +x .\lab.sh
 .\lab.sh
 ```
