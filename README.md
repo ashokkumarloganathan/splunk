@@ -45,6 +45,14 @@ chmod +x .\lab.sh
 
 choose the available options to start / stop Lab or to access the Container CLI's
 
+```
+"1. Start The Lab:"
+"2. Check The Status:"
+"3. Access DVWA CLI:"
+"4. Access Splunk CLI:"
+"5. Stop The Lab:"
+```
+
 ### Accessing the GUI
 
 | Service | URL | Credentials |
