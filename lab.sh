@@ -13,7 +13,7 @@ read option
 case "$option" in
   "1")
     echo "Starting The Lab."
-    docker compose -f lab\ setup.yml up -d
+    docker compose -f lab_setup.yml up -d
     ;;
   "2")
     echo "Checking the Status."
@@ -30,7 +30,7 @@ case "$option" in
     ;;
   "5")
     echo "Stoping Lab."
-    docker compose -f lab\ setup.yml down
+    docker compose -f lab_setup.yml down
     ;;
   *)
     echo "Check the options choosed."

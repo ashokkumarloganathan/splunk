@@ -34,8 +34,8 @@ If you already have docker and docker compose installed then you can skip this s
 
 
 ```bash
-chmod +x 'docker install'.sh
-.\docker install.sh
+chmod +x docker_install.sh
+.\docker_install.sh
 
 ```
 
