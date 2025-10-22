@@ -9,6 +9,7 @@ networks:
 
 volumes:
   splunk-data:
+  splunk-logs:
   dvwa-ubuntu-data:
   dvwa-ubuntu-db:
 
@@ -28,6 +29,8 @@ services:
         ipv4_address: 100.100.100.100
     volumes:
       - splunk-data:/opt/splunk/var
+      - splunk-logs:/opt/splunk/etc
+
 
   dvwa:
     image: ashokkumarl/dvwa:latest
