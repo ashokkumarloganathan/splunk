@@ -18,6 +18,49 @@ This project sets up containarized lab for splunk hands on training using three 
 <img width="741" height="481" alt="image" src="https://github.com/user-attachments/assets/4a8d6de5-8bd0-40db-acd5-3dd37a8291e5" />
 
 
+## Installation & Lab Setup
+
+this lab is based on docker and docker compose hence both are a prerequsites, if you have docker & docker compose installed already then you can skip installation step and directly start the lab.
+
+### Docker Installation
+
+Clone the repo and start the docker installation:
+
+```
+bash
+git clone https://github.com/ashokkumarloganathan/splunk.git
+cd splunk
+chmod +x 'docker install'.sh
+.\docker install.sh
+
+```
+
+When this step is completed start the lab
+
+### Start The Lab
+
+```
+bash
+chmod +x .\lab.sh
+.\lab.sh
+```
+
+choose the available options to start / stop Lab or to access the Container CLI's
+
+### Accessing the GUI
+
+| Service | URL | Credentials |
+|---------|-----|-------------|
+
+| Splunk | http://localhost:8000 or http://100.100.100.100:8000 | admin / changeme |
+| DVWA | http://localhost:8080/dvwa or http://100.100.100.101:8080/dvwa |admin / password |
+
+
+
+
+
+
+
 - 🐳 **Splunk** (log monitoring)
 - 🔐 **DVWA** (Damn Vulnerable Web App)
 - 🐚 **Kali Linux** (penetration testing)
