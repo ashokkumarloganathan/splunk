@@ -18,6 +18,7 @@ case "$option" in
   "2")
     echo "Checking the Status."
     docker ps
+    ./lab.sh
     ;;
   "3")
     echo "CLI Access to DVWA."
