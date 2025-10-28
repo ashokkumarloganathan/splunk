@@ -20,6 +20,8 @@ services:
     hostname: splunk
     ports:
       - "8000:8000"   # Splunk Web UI
+      - "514:514" # Syslog TCP
+      - "9997:9997"  # Splunk HEC and Forwarding
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com

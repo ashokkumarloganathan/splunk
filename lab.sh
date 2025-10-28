@@ -4,7 +4,8 @@ echo "1. Start The Lab:"
 echo "2. Check The Status:"
 echo "3. Access DVWA CLI:"
 echo "4. Access Splunk CLI:"
-echo "5. Stop The Lab:"
+echo "5. Access Kali CLI:"
+echo "6. Stop The Lab:"
 echo "-----------------------"
 
 echo "Choose an Option:"
@@ -29,6 +30,10 @@ case "$option" in
     docker exec -it splunk /bin/bash
     ;;
   "5")
+	  echo "CLI Access to Kali Linux"
+  docker exec -it kali /bin/bash
+	;;
+  "6")
     echo "Stoping Lab."
     docker compose -f lab_setup.yml down
     ;;
