@@ -1,0 +1,35 @@
+services:
+  splunk:
+    extends:
+      file: ./common-services.yml
+      service: splunk-base
+    container_name: splunk
+    ports:
+      - "8000:8000"   # Only UI port
+    profiles:
+      - lab3
+
+  splunk-hf:
+    extends:
+      file: ./common-services.yml
+      service: splunk-base
+    container_name: splunk-hf
+    ports:
+      - "8001:8000"
+      - "9997:9997"
+      - "514:514"
+    networks:
+      lab-net:
+        ipv4_address: 192.168.255.102
+    profiles:
+      - lab3
+    dvwa:
+    image: ashokkumarl/dvwa:latest
+    container_name: dvwa
+    ports:
+      - "8080:80"
+    networks:
+      lab-net:
+        ipv4_address: 192.168.255.101
+    profiles:
+      - lab3

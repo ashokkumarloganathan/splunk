@@ -1,0 +1,24 @@
+services:
+  splunk-base:
+    image: splunk/splunk:latest
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+    volumes:
+      - splunk-data:/opt/splunk/var
+      - splunk-etc:/opt/splunk/etc
+    networks:
+      lab-net:
+        ipv4_address: 192.168.255.100
+
+networks:
+  lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.255.0/24
+
+volumes:
+  splunk-data:
+  splunk-etc:

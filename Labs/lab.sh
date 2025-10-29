@@ -39,7 +39,9 @@ case "$option" in
     ;;
   "7")
     echo "Stoping Lab."
-    docker compose -f lab_setup.yml down
+    docker compose -f 'lab 1'.yml stop
+    docker compose -f 'lab 3'.yml stop
+
     ;;
   *)
     echo "Check the options choosed."

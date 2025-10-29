@@ -12,16 +12,16 @@ read option
 case "$option" in
   "1")
     echo "Starting Lab 1."
-    docker compose -f 'lab 1'.yml up -d
+    docker compose -f ./'lab 1'.yml up -d
     ;;
   "2")
     echo "Starting Lab 2."
-    docker start --container-name splunk -p8000:8000
+    docker start splunk
     docker start dvwa
     ;;
   "3")
     echo "Starting Lab 3."
-    docker start splunk
+    docker start --container-name splunk -p8000:8000
     docker start dvwa
     ;;
   "4")

@@ -1,0 +1,80 @@
+version: "3.9"
+networks:
+  lab-net-1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.255.0/24
+volumes:
+  splunk-data:
+  splunk-etc:
+  dvwa-ubuntu-data:
+  dvwa-ubuntu-db:
+  splunk-hf-data:
+  splunk-hf-etc:
+
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+    networks:
+      lab-net-1:
+        ipv4_address: 192.168.255.100
+    volumes:
+      - splunk-data:/opt/splunk/var
+      - splunk-etc:/opt/splunk/etc
+    profiles:
+      - lab1
+      - lab3
+    ports:
+      - "8000:8000"
+    # Additional ports exposed only in lab1
+  # Separate service definition to expose more ports for lab1
+  dvwa:
+    image: ashokkumarl/dvwa:latest
+    container_name: dvwa
+    hostname: dvwa
+    ports:
+      - "8080:80"    # DVWA Web UI
+    networks:
+      lab-net-1:
+        ipv4_address: 192.168.255.101
+    volumes:
+      - dvwa-ubuntu-data:/opt/var
+      - dvwa-ubuntu-db:/var/lib/mysql
+    profiles:
+      - lab1  
+  splunk-lab1-ports:
+    extends:
+      service: splunk
+    container_name: splunk-lab1-ports
+    ports:
+#      - "8000:8000"
+      - "9997:9997"
+      - "514:514"
+    profiles:
+      - lab1
+
+  # Heavy Forwarder introduced in lab3
+  splunk-hf:
+    image: splunk/splunk:latest
+    container_name: splunk-hf
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+    volumes:
+      - splunk-hf-data:/opt/splunk/var
+      - splunk-hf-etc:/opt/splunk/etc
+    ports:
+      - "9997:9997"
+      - "514:514"
+    networks:
+      lab-net-1:
+        ipv4_address: 192.168.255.102
+    profiles:
+      - lab3
