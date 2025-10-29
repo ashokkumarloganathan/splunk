@@ -13,8 +13,8 @@ read option
 
 case "$option" in
   "1")
-    echo "Starting The Lab."
-    docker compose -f lab_setup.yml up -d
+    echo "Start The Lab."
+    ./chooselab.sh
     ;;
   "2")
     echo "Checking the Status."

@@ -27,7 +27,7 @@ case "$option" in
     ;;
   "5")
 	  echo "Starting Lab 5."
-  docker compose -f lab5.yml up -d
+  docker compose -f 'lab 5'.yml up -d
 	;;
   *)
     echo "Check the options choosed."

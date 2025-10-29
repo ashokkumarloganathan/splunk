@@ -55,7 +55,7 @@ services:
     networks:
       lab-net:
         ipv4_address: 192.168.254.102
-hf:
+  hf:
     image: splunk/splunk:latest
     container_name: splunk
     hostname: splunk
