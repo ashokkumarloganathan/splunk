@@ -1,0 +1,29 @@
+networks:
+  lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.254.0/24
+
+volumes:
+  splunk-hf-data:
+  splunk-hf-etc:
+
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk-hf
+    hostname: splunk-hf
+    ports:
+      - "9997:9997"   # Splunk HEC and Forwarding
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+      - SPLUNK_ROLE='heavy_forwarder'
+    networks:
+      lab-net:
+        ipv4_address: 192.168.254.103
+    volumes:
+      - splunk-hf-data:/opt/splunk/var
+      - splunk-hf-etc:/opt/splunk/etc

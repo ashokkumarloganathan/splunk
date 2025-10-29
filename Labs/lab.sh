@@ -34,6 +34,10 @@ case "$option" in
   docker exec -it kali /bin/bash
 	;;
   "6")
+    echo "CLI Access to Splunk-HF."
+    docker exec -it splunk-hf /bin/bash
+    ;;
+  "7")
     echo "Stoping Lab."
     docker compose -f lab_setup.yml down
     ;;
