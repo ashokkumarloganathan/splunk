@@ -1,15 +1,20 @@
 services:
-  splunk:
-    extends:
-      file: ./common-services.yml
-      service: splunk-base
-    container_name: splunk
+  splunk-base:
+    image: splunk/splunk:latest
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+    volumes:
+      - splunk-data:/opt/splunk/var
+      - splunk-etc:/opt/splunk/etc
+    networks:
+      lab-net:
+        ipv4_address: 192.168.255.100
     ports:
       - "8000:8000"
       - "9997:9997"
       - "514:514"
-    profiles:
-      - lab1
 
   dvwa:
     image: ashokkumarl/dvwa:latest
@@ -19,5 +24,18 @@ services:
     networks:
       lab-net:
         ipv4_address: 192.168.255.101
-    profiles:
-      - lab1
+    volumes:
+      - dvwa-ubuntu-data:/opt/var
+      - dvwa-ubuntu-db:/var/lib/mysql
+networks:
+  lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.255.0/24
+
+volumes:
+  splunk-data:
+  splunk-etc:
+  dvwa-ubuntu-data:
+  dvwa-ubuntu-db:

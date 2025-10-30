@@ -10,7 +10,7 @@ volumes:
   splunk-hf-etc:
 
 services:
-  splunk:
+  splunk-hf:
     image: splunk/splunk:latest
     container_name: splunk-hf
     hostname: splunk-hf

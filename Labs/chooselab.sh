@@ -11,25 +11,22 @@ read option
 
 case "$option" in
   "1")
-    echo "Starting Lab 1."
-    docker compose -f ./'lab 1'.yml up -d
+#    echo "Starting Lab 1."
+    ./lab1.sh
     ;;
   "2")
-    echo "Starting Lab 2."
-    docker start splunk
-    docker start dvwa
+#    echo "Starting Lab 2."
+    ./lab2.sh
     ;;
   "3")
-    echo "Starting Lab 3."
-    docker start --container-name splunk -p8000:8000
-    docker start dvwa
+#    echo "Starting Lab 3."
+    ./lab3.sh
     ;;
   "4")
     echo "Starting Lab 4."
     ;;
   "5")
 	  echo "Starting Lab 5."
-  docker compose -f 'lab 5'.yml up -d
 	;;
   *)
     echo "Check the options choosed."

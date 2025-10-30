@@ -1,11 +1,6 @@
 #!/bin/bash
 echo "-----------------------"
-echo "1. Start The Lab:"
-echo "2. Check The Status:"
-echo "3. Access DVWA CLI:"
-echo "4. Access Splunk CLI:"
-echo "5. Access Kali CLI:"
-echo "6. Stop The Lab:"
+echo "1. Go to Lab Menu:"
 echo "-----------------------"
 
 echo "Choose an Option:"
@@ -15,33 +10,6 @@ case "$option" in
   "1")
     echo "Start The Lab."
     ./chooselab.sh
-    ;;
-  "2")
-    echo "Checking the Status."
-    docker ps
-    ./lab.sh
-    ;;
-  "3")
-    echo "CLI Access to DVWA."
-    docker exec -it dvwa /bin/bash
-    ;;
-  "4")
-    echo "CLI Access to Splunk."
-    docker exec -it splunk /bin/bash
-    ;;
-  "5")
-	  echo "CLI Access to Kali Linux"
-  docker exec -it kali /bin/bash
-	;;
-  "6")
-    echo "CLI Access to Splunk-HF."
-    docker exec -it splunk-hf /bin/bash
-    ;;
-  "7")
-    echo "Stoping Lab."
-    docker compose -f 'lab 1'.yml stop
-    docker compose -f 'lab 3'.yml stop
-
     ;;
   *)
     echo "Check the options choosed."

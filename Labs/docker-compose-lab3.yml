@@ -1,29 +1,27 @@
 services:
-  splunk:
-    extends:
-      file: ./common-services.yml
-      service: splunk-base
-    container_name: splunk
-    ports:
+  splunk-base:
+    ports: !override
       - "8000:8000"   # Only UI port
-    profiles:
-      - lab3
-
   splunk-hf:
-    extends:
-      file: ./common-services.yml
-      service: splunk-base
+    image: splunk/splunk:latest
     container_name: splunk-hf
+    hostname: splunk-hf
     ports:
-      - "8001:8000"
-      - "9997:9997"
-      - "514:514"
+      - "9997:9997"   # Splunk HEC and Forwarding
+      - "514:514"     # Syslog TCP
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+      - SPLUNK_PASSWORD=changeme
+#      - SPLUNK_ROLE='heavy_forwarder'
     networks:
       lab-net:
-        ipv4_address: 192.168.255.102
-    profiles:
-      - lab3
-    dvwa:
+        ipv4_address: 192.168.255.103
+    volumes:
+      - splunk-hf-data:/opt/splunk/var
+      - splunk-hf-etc:/opt/splunk/etc
+
+  dvwa:
     image: ashokkumarl/dvwa:latest
     container_name: dvwa
     ports:
@@ -31,5 +29,17 @@ services:
     networks:
       lab-net:
         ipv4_address: 192.168.255.101
-    profiles:
-      - lab3
+
+networks:
+  lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.255.0/24
+volumes:
+  splunk-hf-data:
+  splunk-hf-etc:
+  splunk-data:
+  splunk-etc:
+  dvwa-ubuntu-data:
+  dvwa-ubuntu-db:
