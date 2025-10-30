@@ -26,7 +26,7 @@ This project sets up containarized lab for splunk hands on training using three 
 apt install unzip
 wget https://github.com/ashokkumarloganathan/splunk/archive/refs/heads/main.zip
 unzip main.zip
-cd splunk-main
+cd splunk-main/Labs
 ```
 
 ### Docker Installation
