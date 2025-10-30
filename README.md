@@ -45,32 +45,41 @@ chmod +x docker_install.sh
 Run the lab.sh and choose the appropriate option to start or stop the lab.
 
 ```bash
-chmod +x ./lab.sh
+chmod +x *.sh
 ./lab.sh
 ```
 
 The script has the following options.
 
 ```
-"1. Start The Lab:"
-"2. Check The Status:"
-"3. Access DVWA CLI:"
-"4. Access Splunk CLI:"
-"5. Stop The Lab:"
+"1. Go To Lab Menu:"
 ```
+Choose the Option 1 to go to Lab Menu and select the Lab you wish to start
 
-### Accessing the Splunk & DVWA Web Portals
+```
+Start The Lab.
+-----------------------
+Choose the Lab to Start
+1. Lab 1 - Configuring Universal Forwarder in Ubuntu:
+2. Lab 2 - Configuring Splunk to Receive Syslogs:
+3. Lab 3 - Setting Up Splunk Heavy Forwarder:
+-----------------------
 
-| Service | URL | Credentials |
-|---------|-----|-------------|
-| Splunk | http://localhost:8000 or http://100.100.100.100:8000 | admin / changeme |
-| DVWA | http://localhost:8080/dvwa or http://100.100.100.101:8080/dvwa |admin / password |
+```
+Under Each Lab choose the appropriate option
 
-First Time DVWA access requires DVWA DB Setup post login. 
+```
+please use the menu below to navigate through the lab options
+-----------------------
+1. Start The Lab:
+2. Check The Status:
+3. Access DVWA CLI:
+4. Access Splunk CLI:
+5. Access Splunk HF CLI:
+6. Stop The Lab:
+-----------------------
 
-## Video Tutorial of Lab Setup
-
-[![Splunk Lab in Docker](https://img.youtube.com/vi/Ggj1U1Ghnn4/0.jpg)](https://www.youtube.com/watch?v=Ggj1U1Ghnn4)
+```
 
 ## Disclamier
 
