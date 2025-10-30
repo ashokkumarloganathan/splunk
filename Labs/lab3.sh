@@ -17,7 +17,7 @@ read option
 case "$option" in
   "1")
     echo "Starting The Lab."
-    docker compose -f ./docker-compose-lab1.yml -f ./docker-compose-lab3 up -d
+    docker compose -f ./docker-compose-lab1.yml -f ./docker-compose-lab3.yml up -d
     countdown_seconds=120
     echo "Starting your lab in 120s..."
 
