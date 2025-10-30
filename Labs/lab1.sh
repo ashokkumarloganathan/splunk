@@ -3,7 +3,7 @@ echo "-----------------------"
 echo "Welcome to Lab 1"
 echo "This Lab focuses on Configuring Universal Forwarder in Ubuntu"
 echo "please use the menu below to navigate through the lab options"
-echo "Lab Manual: https://tinyurl.com/al-splunk-lab1
+echo "Lab Manual: https://tinyurl.com/al-splunk-lab1"
 echo "-----------------------"
 echo "1. Start The Lab:"
 echo "2. Check The Status:"
